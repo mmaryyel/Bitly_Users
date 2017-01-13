@@ -1,0 +1,46 @@
+<div class="form-style-0">
+
+
+<label>
+  <h1>"BIENVENIDO"</h1>
+  
+      <% if @notlog%>
+      <p> **Necesitas hacer log in para entrar a la página secreta.**</p>
+    <%end%>
+
+  <fieldset>
+    
+  <p>YA TIENES UNA CUENTA CON NOSOTROS?</p>
+    
+    <a href="/login"><button>Inicia sesión</button></a>
+    
+
+  <p> CREA UNA CUENTA</p>
+  
+    <a href="/signup"><button>Registrate</button></a>
+
+</fieldset>
+</label>
+
+<label>
+<fieldset class= "url">
+  <p>Ingresa tu  'url'</p>
+  <form class="feedburner-box" action="/urls" method="post">
+    <input type="text" placeholder="url" name="long_url">
+    <input type="submit" value="Go!">
+  </form>
+</fieldset> 
+
+
+<fieldset class= "field_set">
+  <legend>prueba cualquier sitio de la lista:</legend>
+  <br>
+
+  <%@url%>
+    <a id="<%=@url.id%>" href= "/url/<%=@url.short_url%>" target='_blank'> <%=@url.short_url%>   Visted (<%=@url.click_count%>) times.</a>
+
+    <br>
+ 
+</label>
+   
+  </fieldset>
